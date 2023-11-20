@@ -10,9 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_153041) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_20_155843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "occurs_on"
+    t.integer "duration_minutes"
+    t.boolean "is_online", default: false
+    t.string "address"
+    t.string "status"
+    t.bigint "users_id", null: false
+    t.bigint "lessons_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lessons_id"], name: "index_bookings_on_lessons_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "subject"
+    t.text "description"
+    t.integer "hourly_rate"
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_lessons_on_users_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "bookings_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bookings_id"], name: "index_reviews_on_bookings_id"
+  end
+
+  create_table "teacher_availabilities", force: :cascade do |t|
+    t.boolean "monday_am", default: false
+    t.boolean "monday_pm", default: false
+    t.boolean "tuesday_am", default: false
+    t.boolean "tuesday_pm", default: false
+    t.boolean "wednesday_am", default: false
+    t.boolean "wednesday_pm", default: false
+    t.boolean "thursday_am", default: false
+    t.boolean "thursday_pm", default: false
+    t.boolean "friday_am", default: false
+    t.boolean "friday_pm", default: false
+    t.boolean "saturday_am", default: false
+    t.boolean "saturday_pm", default: false
+    t.boolean "sunday_am", default: false
+    t.boolean "sunday_pm", default: false
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_teacher_availabilities_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,4 +86,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_153041) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "lessons", column: "lessons_id"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "lessons", "users", column: "users_id"
+  add_foreign_key "reviews", "bookings", column: "bookings_id"
+  add_foreign_key "teacher_availabilities", "users", column: "users_id"
 end
