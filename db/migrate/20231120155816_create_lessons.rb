@@ -4,7 +4,7 @@ class CreateLessons < ActiveRecord::Migration[7.1]
       t.string :subject
       t.text :description
       t.integer :hourly_rate
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

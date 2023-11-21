@@ -6,8 +6,8 @@ class CreateBookings < ActiveRecord::Migration[7.1]
       t.boolean :is_online, default: false
       t.string :address
       t.string :status
-      t.references :users, null: false, foreign_key: true
-      t.references :lessons, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
+      t.references :lesson, null: false, foreign_key: true
       t.timestamps
     end
   end
