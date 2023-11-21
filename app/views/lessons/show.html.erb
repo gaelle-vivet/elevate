@@ -1,0 +1,16 @@
+<div class= card-teacher-presentation>
+  <img src="#" alt="avatar">
+  <h2><%=lesson.user.first_name%></h2>
+  <p><%=lesson.user.education_level%></p>
+  <p><%=lesson.user.bio%></p>
+  <p><%=lesson.user.address_mail%></p>
+
+</div>
+<div>
+  <h3>Lesson Details</h3>
+  <p><%= lesson.subject %></p>
+  <p><%= lesson.description %></p>
+</div>
+<div>
+  <h3><%="#{lesson.user.first_name}'s availability"%></h3>
+</div>

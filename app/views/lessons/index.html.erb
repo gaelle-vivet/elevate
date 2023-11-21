@@ -1,13 +1,11 @@
-<h1><%="Discover all #{@lesson.subject}"%></h1>
-<ul>
+<h1><%="Discover all english lessons"%></h1>
   <% @lessons.each do |lesson| %>
     <div class="card-lesson">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <p><%=lesson.user.is_teacher.first_name%></p>
+      <p><%=lesson.user.first_name%></p>
     <div class="card-lesson-infos">
       <%=lesson.description%>
     <h2 class="card-lesson-pricing"><%=lesson.hourly_rate%></h2>
     </div>
     </div>
   <% end %>
-</ul>

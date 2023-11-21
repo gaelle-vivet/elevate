@@ -2,6 +2,11 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px
 }
 
 .card-lesson > img {
@@ -10,24 +15,19 @@
   object-fit: cover;
 }
 
-.card-trip p {
-  font-size: 12px;
+.card-lesson p {
+  font-size: medium;
   opacity: .7;
-  margin: 0;
+  margin: 15px;
+  color: $orange;
+  margin-bottom: 0px;
+  margin-top: 10px;
 }
 
-
-.card-trip .card-lesson-infos {
+.card-lesson .card-lesson-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
-}
-
-.card-trip-infos .card-lesson-pricing {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
 }
