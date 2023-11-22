@@ -31,3 +31,32 @@
   align-items: center;
   position: relative;
 }
+
+.card-teacher-intro {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: #9382CA;
+  color: white;
+  padding-bottom: 10px;
+}
+
+.card-teacher-intro .avatar-large {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card-teacher-intro .p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.card-teacher-intro .span {
+  font-size: smaller;
+}
+
+.card-teacher-about .p {
+  margin-top: 5px;
+}

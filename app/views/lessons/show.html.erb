@@ -1,16 +1,37 @@
-<div class= card-teacher-presentation>
-  <img src="#" alt="avatar">
-  <h2><%=lesson.user.first_name%></h2>
-  <p><%=lesson.user.education_level%></p>
-  <p><%=lesson.user.bio%></p>
-  <p><%=lesson.user.address_mail%></p>
+<div class="d-flex flex-column">
+  <div class="card-teacher-intro">
+    <%= image_tag "gaelle.jpeg", class: "avatar-large", alt: "Teacher photo"%>
+    <h2><%=@lesson.user.first_name%></h2>
+    <p><%=@lesson.subject%></p>
+    <i class="fa-solid fa-star" style="color: #ffb500;"></i><span>5 (8 reviews)</span>
+  </div>
 
-</div>
-<div>
-  <h3>Lesson Details</h3>
-  <p><%= lesson.subject %></p>
-  <p><%= lesson.description %></p>
-</div>
-<div>
-  <h3><%="#{lesson.user.first_name}'s availability"%></h3>
+  <div class="card-teacher-about m-3">
+    <h3><%="About #{@lesson.user.first_name}"%></h3>
+      <div class="d-flex flex-row">
+        <i class="fa-solid fa-graduation-cap icon" style="color: #000000;"></i> <%=@lesson.user.education_level%>
+        <i class="fa-solid fa-euro-sign icon" style="color: #000000;"></i> <%="#{@lesson.hourly_rate}€ Hourly Rate"%>
+      </div>
+    <p><%=@lesson.user.bio%></p>
+  </div>
+
+  <div class="card-lesson-about m-3">
+    <h3>Lesson Details</h3>
+    <p><%=@lesson.description %></p>
+  </div>
+
+  <div class="card-teacher-availability m-3">
+    <h3><%="#{@lesson.user.first_name}'s availability"%></h3>
+      <%@teacher_availabilities.attributes.select { |key, value| value == true}.keys.each do |key|%>
+      <% day_array = key.split("_") %>
+      <span class="box-rounded"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "moring" : "afternoon"}" %></span>
+      <%end%>
+
+
+
+  </div>
+
+  <div>
+    <a class="btn btn-flat" href="#">Book now</a>
+  </div>
 </div>
