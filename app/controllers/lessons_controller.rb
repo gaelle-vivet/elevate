@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    @lessons = params[:subject].present? ? Lesson.where(subject: params[:subject].capitalize) : Lesson.all
   end
 
   def show
