@@ -10,3 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: white;
+}
+
+p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
