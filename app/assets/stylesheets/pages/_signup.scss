@@ -1,13 +1,35 @@
 
 .form-inputs {
+  display: flex;  // Use flexbox to align items horizontally
+  flex-direction: column; // Align items vertically
+  align-items: center; // Align items vertically
+
   .name-inputs {
     display: flex;  // Use flexbox to align items horizontally
     gap: 0.01px;      // Adjust the gap between first name and last name
+    align-items: center; // Align items vertically
+    justify-content: space-between;
   }
 
+  .email,
+  .user_education_level,
+  .password,
+  .password-confirmation,
+  .name-inputs{
+    width: 100%;
+  }
+
+  .last_name_label,
   .first-name,
   .last-name {
-    width: 75%;      // Set the width of each input (adjust as needed)
+    width: 90%;      // Set the width of each input (adjust as needed)
+  }
+
+  .user_last_name{
+    display: flex;  // Use flexbox to align items horizontally
+    flex-direction: column; // Align items vertically
+    align-items: end;
+
   }
 
   // Add any other styling you need for the rest of the form inputs
