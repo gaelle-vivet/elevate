@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :bookings, through: :lessons
   has_many :reviews, through: :bookings
+  validates :education_level, inclusion: { in: %w(Secondary Undergraduate Masters MBA PhD) }
+  validates :first_name, :last_name, presence: true
 end

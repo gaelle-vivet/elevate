@@ -20,30 +20,30 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_155843) do
     t.boolean "is_online", default: false
     t.string "address"
     t.string "status"
-    t.bigint "users_id", null: false
-    t.bigint "lessons_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lessons_id"], name: "index_bookings_on_lessons_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
     t.string "subject"
     t.text "description"
     t.integer "hourly_rate"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_lessons_on_users_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
-    t.bigint "bookings_id", null: false
+    t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bookings_id"], name: "index_reviews_on_bookings_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "teacher_availabilities", force: :cascade do |t|
@@ -61,10 +61,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_155843) do
     t.boolean "saturday_pm", default: false
     t.boolean "sunday_am", default: false
     t.boolean "sunday_pm", default: false
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["users_id"], name: "index_teacher_availabilities_on_users_id"
+    t.index ["user_id"], name: "index_teacher_availabilities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,9 +86,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_155843) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "lessons", column: "lessons_id"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "lessons", "users", column: "users_id"
-  add_foreign_key "reviews", "bookings", column: "bookings_id"
-  add_foreign_key "teacher_availabilities", "users", column: "users_id"
+  add_foreign_key "bookings", "lessons"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "lessons", "users"
+  add_foreign_key "reviews", "bookings"
+  add_foreign_key "teacher_availabilities", "users"
 end

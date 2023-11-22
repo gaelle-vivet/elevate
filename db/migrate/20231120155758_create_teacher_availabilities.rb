@@ -15,7 +15,7 @@ class CreateTeacherAvailabilities < ActiveRecord::Migration[7.1]
       t.boolean :saturday_pm, default: false
       t.boolean :sunday_am, default: false
       t.boolean :sunday_pm, default: false
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
