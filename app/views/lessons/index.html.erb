@@ -1,11 +1,14 @@
 <h1 class="text-center"><%="English lessons"%></h1>
   <% @lessons.each do |lesson| %>
-    <div class="card-lesson">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <p><%=lesson.user.first_name%></p>
-    <div class="card-lesson-infos">
-      <%=lesson.description%>
-    <h2 class="card-lesson-pricing"><%=lesson.hourly_rate%></h2>
-    </div>
-    </div>
+    <%=link_to lesson_path(lesson), style: "text-decoration: none;" do%>
+      <div class="card-lesson" >
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <p><%=lesson.user.first_name%></p>
+      <div class="card-lesson-infos">
+        <span><%=lesson.subject%></span>
+        <span><%=lesson.description%></span>
+      <h2 class="card-lesson-pricing"><%="#{lesson.hourly_rate}€"%></h2>
+      </div>
+      </div>
+    <% end %>
   <% end %>
