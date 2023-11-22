@@ -8,15 +8,16 @@
   <div class="flex-container item-flex">
   <!-- First Part: Dropdown Menu -->
     <%# <div class="flex-item lessons-select"> %>
-    <%= form_with url: root_path, method: :get, class: "d-flex text_and_icon" do %> 
-      <%= select_tag "topic", options_for_select(["English", "Geo", "Math"]), #Lesson.all.pluck(:subject).uniq
+    <%= form_with url: lessons_path, method: :get, class: "d-flex text_and_icon" do %> 
+      <%= select_tag "subject", options_for_select(Lesson::VALID_SUBJECTS), #Lesson.all.pluck(:subject).uniq
             class: "form-control flex-item-grow",
             placeholder: "What do you want to learn today?"
         %>
             <div class="line"></div>
 
-      <%= submit_tag "", name: "search", class: "btn flex-item text_and_icon" %>
-      <i class="fas fa-search search_icon"></i>    
+      <%= button_tag(type: "submit", name: "search", class: "btn flex-item text_and_icon") do %>
+        <%= content_tag(:i, "", class: "fas fa-search search_icon") %>
+      <% end %>
     <% end %>
       <%# <select class="flex-item-grow lessons-select">
         <option value="option1">Math</option>
