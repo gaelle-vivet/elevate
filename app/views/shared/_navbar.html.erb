@@ -1,26 +1,22 @@
   <nav class="navbar fixed-bottom navbar-light bg-light">
 
-          <%= link_to "#", class: "nav-link" do %>
+          <%= link_to root_path, class: "nav-link" do %>
             <i class="fa-solid fa-house"></i> <span>Home</span>
           <% end %>
 
 
-          <%= link_to "#", class: "nav-link" do %>
+          <%= link_to root_path, class: "nav-link" do %>
             <i class="fa-solid fa-magnifying-glass"></i> <span>Search</span>
           <% end %>
 
           <%= link_to "#", class: "nav-link" do %>
-            <i class="fa-solid fa-calendar-days"></i> <span>Calendar</span>
+            <i class="fa-solid fa-calendar-days"></i> <span>Bookings</span>
           <% end %>
 
           <%= link_to "#", class: "nav-link" do %>
             <i class="fa-solid fa-user"></i>
             <span>
-              <% if current_user %>
                 My profile
-              <% else %>
-                Login
-              <% end %>
             </span>
           <% end %>
   </nav>

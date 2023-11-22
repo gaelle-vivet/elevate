@@ -9,7 +9,7 @@
   <!-- First Part: Dropdown Menu -->
     <%# <div class="flex-item lessons-select"> %>
     <%= form_with url: root_path, method: :get, class: "d-flex text_and_icon" do %> 
-      <%= select_tag "topic", options_for_select(["Math", "Geo", "Finance"]), #Lesson.all.pluck(:subject).uniq
+      <%= select_tag "topic", options_for_select(["English", "Geo", "Math"]), #Lesson.all.pluck(:subject).uniq
             class: "form-control flex-item-grow",
             placeholder: "What do you want to learn today?"
         %>
