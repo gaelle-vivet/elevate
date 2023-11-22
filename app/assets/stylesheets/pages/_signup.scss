@@ -1,0 +1,14 @@
+
+.form-inputs {
+  .name-inputs {
+    display: flex;  // Use flexbox to align items horizontally
+    gap: 0.01px;      // Adjust the gap between first name and last name
+  }
+
+  .first-name,
+  .last-name {
+    width: 75%;      // Set the width of each input (adjust as needed)
+  }
+
+  // Add any other styling you need for the rest of the form inputs
+}
