@@ -1,32 +1,14 @@
 <div class="homepage" id="bk-img">
   <div class="head">
-    <%= image_tag "elevate_logo.png", id:"logo" %>
-    <h1 class="title">Elevate.</h1>
-      <%# <p class="slogan">Unlock your potential with personalised teaching</p> %>
   </div>
 
-<div class="feature-list">
-    <img src="graduation.png" alt="Graduation Logo">
-    Knowledgeable and experienced teachers
-  </p>
-  <p class="save">
-    <img src="save.png" alt="Save Logo">
-    Offering lessons at home or online
-  </p>
-  <p class="brain">
-    <img src="brain.png" alt="Brain Logo">
-    Tailored for all skill levels and budgets
-  </p>
-</div>
+    <h1 class="title">Elevate.</h1>
 
 
-  <div class="flex-container item-flex">
-  <!-- First Part: Dropdown Menu -->
-    <%# <div class="flex-item lessons-select"> %>
-    <%= form_with url: lessons_path, method: :get, class: "d-flex text_and_icon" do %>
+    <%= form_with url: lessons_path, method: :get, class: "d-flex text_and_icon flex-container item-flex" do %>
       <%= select_tag "subject", options_for_select(Lesson::VALID_SUBJECTS), #Lesson.all.pluck(:subject).uniq
-            class: "form-control flex-item-grow",
-            placeholder: "What do you want to learn today?"
+            class: "form-control",
+            prompt: "What do you want to learn?"
         %>
             <div class="line"></div>
 
@@ -34,27 +16,10 @@
         <%= content_tag(:i, "", class: "fas fa-search search_icon") %>
       <% end %>
     <% end %>
-      <%# <select class="flex-item-grow lessons-select">
-        <option value="option1">Math</option>
-        <option value="option2">Geography</option>
-        <option value="option3">Coding</option>
-        <!-- Add more options as needed -->
-      </select> %>
-    <%# </div> %>
 
 
-    <!-- Second Part: City Location Input -->
-    <%# <div style="flex: 2;">
-      <input type="text" placeholder="Enter your city">
-    </div> %>
-
-    <!-- Third Part: Search Button -->
-    <%# <div class="flex-item text_and-icon">
-      <i class="button fas fa-search search_icon"></i>
-    </div> %>
-  </div>
   <div class="bottom">
-    <p class="slogan" >Unlock your potential, Elevate your learning.</p>
+    <p class="slogan" >Find a teacher near you and unlock your true potential today</p>
   </div>
 
 </div>

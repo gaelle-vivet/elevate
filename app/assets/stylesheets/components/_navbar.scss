@@ -3,14 +3,15 @@
   display: flex;
   justify-content: space-between;
   margin: 0px auto;
-  background: white;
+  background: $purple;
   width: 100vw;
-  padding: 10px;
+  padding: 16px 24px;
+  box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.8);
 }
 
 .navbar i {
   display: block;
-  color: $purple;
+  color: $white;
   height: 24px;
   width: 24px;
   font-size: x-large;

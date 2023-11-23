@@ -9,54 +9,34 @@
     grid-template-columns: 1fr;
   }
 }
+#bk-img {
+  max-width: 100vw;
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('bk-img.jpg');
+  min-height: 100vh;
+}
 .homepage{
   background-size: cover;
   background-position: center;
 }
 
 .title {
-  font-family: 'Poppins';font-size: 50px;
+  font-family: 'Poppins';font-size: 60px;
   font-weight: bold;
   color: $dark-gray;
   text-align: center;
+  margin-top: 250px; /* Adjust the margin-top to move the title down */
+  margin-bottom: 25px;
 }
 
-#bk-img {
-  max-width: 100vw;
-  background-image: linear-gradient(rgba(255,255,255,0.5), $light-gray), url('bk-img.jpg');
-  min-height: 100vh;
-}
-
-#logo {
-  // background-image: url('elevate_logo.jpg');
-  width: 150px;
-  height: 150px;
-  padding: 20px;
-  -webkit-filter: drop-shadow(3px 3px 3px #222);
-  filter: drop-shadow(3px 3px 3px #222);
-}
-
-.feature-list {
-  font-family: 'Poppins';font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  margin: 20px 0;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
-.graduation {
-  background-image: url('graduation.png');
-}
 
 .slogan {
-  font-family: 'Poppins';font-size: 30px;
-  font-weight: bold;
-  text-align: left;
-  color: #22092C;
+  font-family: 'Poppins';font-size: 15px;
+  text-align: center;
+  color: $dark-gray;
+  background-color:rgba(250, 250, 250, 0.8);
+  border-radius: 25px;
 }
+
 .head {
 /* Arriba | Derecha | Abajo | Izquierda */
   box-sizing: content-box;
@@ -96,14 +76,21 @@
   display: flex;
   align-items: center;
   margin: auto 25px auto 25px;
-  width : auto;
+  width: auto;
   height: 54px;
-  // background-color : white;
+  background-color: $white;
   border-radius: 25px;
-  -webkit-box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
-  box-shadow: 0px 10px 38px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 10px 38px 0px rgba(147, 130, 201, 0.5); /* Keep the box shadow */
 }
-.flex-item-grow {
-  flex: 1 0 auto;
+
+.form-control {
+  background-color: $white;
+  border: none;
+  font-size: 10px;
+}
+
+.search_icon {
+  padding-right: 20px;
+  color: $purple;
+  font-size: 24px;
 }
