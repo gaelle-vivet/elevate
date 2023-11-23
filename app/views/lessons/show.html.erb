@@ -3,14 +3,19 @@
     <%= image_tag "gaelle.jpeg", class: "avatar-large", alt: "Teacher photo"%>
     <h2><%=@lesson.user.first_name%></h2>
     <p><%=@lesson.subject%></p>
-    <i class="fa-solid fa-star" style="color: #ffb500;"></i><span>5 (8 reviews)</span>
   </div>
 
   <div class="card-teacher-about m-3">
     <h3><%="About #{@lesson.user.first_name}"%></h3>
       <div class="d-flex flex-row">
-        <i class="fa-solid fa-graduation-cap icon" style="color: #000000;"></i> <%=@lesson.user.education_level%>
-        <i class="fa-solid fa-euro-sign icon" style="color: #000000;"></i> <%="#{@lesson.hourly_rate}€ Hourly Rate"%>
+        <span class="rounded-icon">
+          <i class="fa-solid fa-graduation-cap icon" style="color: #ffffff;"></i>
+        </span>
+        <p><%=@lesson.user.education_level%></p>
+        <span class="rounded-icon">
+          <i class="fa-solid fa-coins" style="color: #ffffff;"></i>
+        </span>
+        <p><%="#{@lesson.hourly_rate}€"%></p>
       </div>
     <p><%=@lesson.user.bio%></p>
   </div>
@@ -26,12 +31,14 @@
       <% day_array = key.split("_") %>
       <span class="box-rounded"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "moring" : "afternoon"}" %></span>
       <%end%>
-
-
-
   </div>
 
-  <div>
-    <%= link_to "Book", new_user_registration_path, class: "btn btn-primary" %>
-  </div>
+  <div data-controller="toggle" class="mt-5">
+    <%= simple_form_for [@lesson, @booking] do |f|%>
+    <%= f.input :occurs_on,
+                label: "Select date and time",
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit 'Book', class: "btn btn-primary" %>
+    <%end%>
 </div>
