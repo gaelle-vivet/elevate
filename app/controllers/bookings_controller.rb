@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_lesson, only: %i[create]
+  before_action :authenticate_user!, only: %i[create]
 
   def index
     if current_user && current_user.is_teacher
@@ -17,6 +18,10 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.lesson = @lesson
+    @booking.user = current_user
+    @booking.duration_minutes = 60
+    @booking.status = "Confirmed"
+    @booking.address = "At my place"
     if @booking.save
       redirect_to bookings_index_path
     else
