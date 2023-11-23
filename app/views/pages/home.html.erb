@@ -1,14 +1,14 @@
-<div class="homepage" <%= image_tag "bk-img.jpg", id:"bk-img" %>
-  
+<div class="homepage" id="bk-img">
+
   <div class="head">
-    <h1 class="d-none">Elevate</h1>
     <%= image_tag "elevate_logo.png", id:"logo" %>
-      <p class="slogan">Find your favorite Teacher <br> close to you</p>
+    <h1 class="title">Elevate</h1>
+      <%# <p class="slogan">Unlock your potential with personalised teaching</p> %>
   </div>
   <div class="flex-container item-flex">
   <!-- First Part: Dropdown Menu -->
     <%# <div class="flex-item lessons-select"> %>
-    <%= form_with url: lessons_path, method: :get, class: "d-flex text_and_icon" do %> 
+    <%= form_with url: lessons_path, method: :get, class: "d-flex text_and_icon" do %>
       <%= select_tag "subject", options_for_select(Lesson::VALID_SUBJECTS), #Lesson.all.pluck(:subject).uniq
             class: "form-control flex-item-grow",
             placeholder: "What do you want to learn today?"
@@ -26,7 +26,7 @@
         <!-- Add more options as needed -->
       </select> %>
     <%# </div> %>
-     
+
 
     <!-- Second Part: City Location Input -->
     <%# <div style="flex: 2;">
@@ -35,11 +35,11 @@
 
     <!-- Third Part: Search Button -->
     <%# <div class="flex-item text_and-icon">
-      <i class="button fas fa-search search_icon"></i>    
+      <i class="button fas fa-search search_icon"></i>
     </div> %>
   </div>
   <div class="bottom">
-    <p class="slogan" >Empowering Minds Elevating Futures</p>
+    <p class="slogan" >Unlock your potential with personalised teaching</p>
   </div>
 
 </div>
