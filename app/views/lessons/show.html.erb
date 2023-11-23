@@ -33,10 +33,12 @@
       <%end%>
   </div>
 
-
-  <%#
   <div data-controller="toggle" class="mt-5">
-    <button class="btn btn-primary">Book a lesson</button>
-    <%= simple_form_for booking%>
-  %>
+    <%= simple_form_for [@lesson, @booking] do |f|%>
+    <%= f.input :occurs_on,
+                label: "Select date and time",
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+    <%= f.submit 'Book', class: "btn btn-primary" %>
+    <%end%>
 </div>

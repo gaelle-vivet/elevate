@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_lesson, only: %i[create]
+  
   def index
     if current_user && current_user.is_teacher
       @bookings = Booking.where(lesson: current_user.lessons)
@@ -10,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    # @bookings 
+    # @bookings
   end
 
   def create
