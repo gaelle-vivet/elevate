@@ -35,7 +35,7 @@ user3 = User.create!(
   last_name: 'Bourgeois',
   email: 'bourgeois@gmail.com',
   education_level: 'MBA',
-  avatar_url: 'https://media.licdn.com/dms/image/C4E03AQEfXJV7osHDTw/profile-displayphoto-shrink_800_800/0/1526374010120?e=1706140800&v=beta&t=4oI03Qaua6m1BuEGGaHS5Je0KxQ_N2WHdUx-Q53HX7E',
+  avatar_url: 'https://notjustaheadshot.com/wp-content/uploads/2022/09/LinkedIn-headshot-of-a-business-woman-in-Hong-Kong-9.jpg',
   is_teacher: true,
   bio: 'Former high school teacher. Experienced french & maths teacher with a track record for success.',
   address: '167 Route de Bel Air, 08008 Biarritz',
@@ -141,7 +141,7 @@ lesson7 = Lesson.create!(
   user_id: user3.id,
   subject: 'French',
   description: 'Advanced Business-Level French',
-  hourly_rate: 28
+  hourly_rate: 35
 )
 
 lesson8 = Lesson.create!(
