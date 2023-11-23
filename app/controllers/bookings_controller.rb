@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_lesson, only: %i[create]
-  
+
   def index
     if current_user && current_user.is_teacher
       @bookings = Booking.where(lesson: current_user.lessons)
@@ -17,8 +17,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.lesson = @lesson
-    @booking.save
-    redirect_to bookings_index_path
+    if @booking.save
+      redirect_to bookings_index_path
+    else
+      redirect_to lesson_path(@lesson), alert: "Pick a date and time"
+    end
   end
 
   private

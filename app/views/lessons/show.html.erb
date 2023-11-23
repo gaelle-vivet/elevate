@@ -1,5 +1,6 @@
 <div class="d-flex flex-column">
   <div class="card-teacher-intro">
+    <div class="simple-box"></div>
     <%= image_tag "gaelle.jpeg", class: "avatar-large", alt: "Teacher photo"%>
     <h2><%=@lesson.user.first_name%></h2>
     <p><%=@lesson.subject%></p>
@@ -7,16 +8,12 @@
 
   <div class="card-teacher-about m-3">
     <h3><%="About #{@lesson.user.first_name}"%></h3>
-      <div class="d-flex flex-row">
-        <span class="rounded-icon">
-          <i class="fa-solid fa-graduation-cap icon" style="color: #ffffff;"></i>
+        <span class="box-rounded">
+          <i class="fa-solid fa-graduation-cap icon" style="color: #ffffff;"></i>   <%=@lesson.user.education_level%>
         </span>
-        <p><%=@lesson.user.education_level%></p>
-        <span class="rounded-icon">
-          <i class="fa-solid fa-coins" style="color: #ffffff;"></i>
+        <span class="box-rounded">
+          <i class="fa-solid fa-coins" style="color: #ffffff;"></i>   <%="#{@lesson.hourly_rate}€/hour"%>
         </span>
-        <p><%="#{@lesson.hourly_rate}€"%></p>
-      </div>
     <p><%=@lesson.user.bio%></p>
   </div>
 
@@ -29,16 +26,17 @@
     <h3><%="#{@lesson.user.first_name}'s availability"%></h3>
       <%@teacher_availabilities.attributes.select { |key, value| value == true}.keys.each do |key|%>
       <% day_array = key.split("_") %>
-      <span class="box-rounded"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "moring" : "afternoon"}" %></span>
+      <span class="box-rounded"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "morning" : "afternoon"}" %></span>
       <%end%>
   </div>
 
   <div data-controller="toggle" class="mt-5">
+    <h3><%="Book Now With #{@lesson.user.first_name}"%></h3>
     <%= simple_form_for [@lesson, @booking] do |f|%>
     <%= f.input :occurs_on,
-                label: "Select date and time",
+                label: false,
                 as: :string,
                 input_html: { data: { controller: "datepicker" } } %>
-    <%= f.submit 'Book', class: "btn btn-primary" %>
+    <%= f.submit 'Book', class: "btn btn-primary btn-block" %>
     <%end%>
 </div>

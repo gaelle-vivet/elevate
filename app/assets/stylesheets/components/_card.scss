@@ -56,16 +56,17 @@
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  background-color: #9382CA;
-  color: white;
+  color: $dark-gray;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .card-teacher-intro .avatar-large {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
 }
 
 .card-teacher-intro .p {

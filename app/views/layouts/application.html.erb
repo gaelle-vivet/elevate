@@ -18,21 +18,20 @@
       <p class="alert"><%= alert %></p>
     <% end %>
     <%= render "shared/navbar" %>
-  <% if current_user %>
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},  class: "btn btn-secondary logout-button" %>
-  <% end %>
+    <% if current_user %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete},  class: "btn btn-secondary logout-button" %>
+    <% end %>
 
-<% unless params[:controller] == "pages" && params[:action] == "home" %>
-    <div class="container">
-<% end %>
+    <% unless params[:controller] == "pages" && params[:action] == "home" %>
+      <div class="container">
+    <% end %>
 
-<div style="margin-bottom: 70px"> <%# margin is the same as navbar height  %>
-    <%= yield %>
-</div>
-
-<% unless params[:controller] == "pages" && params[:action] == "home" %>
+    <div style="margin-bottom: 70px"> <%# margin is the same as navbar height  %>
+      <%= yield %>
     </div>
-<% end %>
-    </div>
+
+    <% unless params[:controller] == "pages" && params[:action] == "home" %>
+      </div>
+    <% end %>
   </body>
 </html>
