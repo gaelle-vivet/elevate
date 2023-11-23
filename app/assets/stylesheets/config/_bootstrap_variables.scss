@@ -3,6 +3,12 @@
 // e.g. here are the ones you can override for the navbar https://getbootstrap.com/docs/5.2/components/navbar/#sass-variables
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
+// Import Google fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap');
+
+// Define fonts for body and headers
+$body-font: "Poppins", "Helvetica", "sans-serif";
+$headers-font: "Poppins", "Helvetica", "sans-serif";
 
 // General style
 $font-family-sans-serif: $body-font;
@@ -11,11 +17,12 @@ $body-bg:                $light-gray;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $blue;
-$success:    $green;
+$body-color: $dark-gray;
+$light: $light-gray;
+$primary:    $purple;
+$second:    $yellow;
 $info:       $yellow;
-$danger:     $red;
+$danger:     $orange;
 $warning:    $orange;
 
 // Buttons & inputs' radius
