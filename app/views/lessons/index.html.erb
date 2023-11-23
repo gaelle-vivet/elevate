@@ -2,7 +2,7 @@
   <% @lessons.each do |lesson| %>
     <%=link_to lesson_path(lesson), style: "text-decoration: none;" do%>
       <div class="card-lesson" >
-        <%= image_tag "cover_teacher.jpg", alt: "Teacher photo"%>
+        <%= image_tag lesson.user.avatar_url, alt: "Teacher photo"%>
         <p><%=lesson.user.first_name%></p>
       <div class="card-lesson-infos">
         <span><%=lesson.subject%></span>
