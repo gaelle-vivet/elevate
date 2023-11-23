@@ -18,6 +18,7 @@
   font-family: 'Poppins';font-size: 50px;
   font-weight: bold;
   color: $dark-gray;
+  text-align: center;
 }
 
 #bk-img {
@@ -34,6 +35,22 @@
   -webkit-filter: drop-shadow(3px 3px 3px #222);
   filter: drop-shadow(3px 3px 3px #222);
 }
+
+.feature-list {
+  font-family: 'Poppins';font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin: 20px 0;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.graduation {
+  background-image: url('graduation.png');
+}
+
 .slogan {
   font-family: 'Poppins';font-size: 30px;
   font-weight: bold;
