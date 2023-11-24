@@ -21,3 +21,18 @@
   margin-block: 4px;
   margin-inline: 0px;
 }
+
+.box-rounded-3 {
+  color: $primary;
+  text-decoration: bold;
+  font-size: small;
+  background-color: $light-purple;
+  padding: 8px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 119px;
+  margin-top: 10px;
+  margin-left: 200px;
+  margin-bottom: -35px;
+}

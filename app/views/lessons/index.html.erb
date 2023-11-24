@@ -5,13 +5,17 @@
     <%=link_to lesson_path(lesson), style: "text-decoration: none;", class: "card-lesson-link" do%>
       <div class="card-lesson" >
         <%= image_tag lesson.user.avatar_url, alt: "Teacher photo"%>
-        <p><%=lesson.user.first_name%></p>
+        <span class="box-rounded-3">
+          <i class="fa-solid fa-coins" style="color: #ffffff;"></i>   <%="#{lesson.hourly_rate}€/hour"%>
+        </span>
+        <p><strong><%=lesson.user.first_name%> <%=lesson.user.last_name%></strong></p>
       <div class="card-lesson-infos">
-        <span><%=lesson.subject%></span>
+        <span><%=lesson.subject%></span> -
         <span><%=lesson.description%></span>
-      <h2 class="card-lesson-pricing"><%="#{lesson.hourly_rate}€"%></h2>
       </div>
       </div>
     <% end %>
   <% end %>
 </div>
+
+<strong></strong>
