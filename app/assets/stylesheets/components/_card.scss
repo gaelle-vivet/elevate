@@ -1,6 +1,32 @@
 // .booking-container {
 //   text-align: center;
 // }
+
+.book-now {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.card-lesson-about {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.card-teacher-availability {
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.teacher-tags {
+  text-align: center;
+}
+
 .booking-container {
   display: flex;
   justify-content: center;
@@ -70,7 +96,7 @@
 }
 
 .card-teacher-intro {
-  margin-bottom: 10px;
+  margin-bottom: -30px;
   text-align: center;
   color: $dark-gray;
   padding-bottom: 10px;
@@ -78,11 +104,13 @@
 }
 
 .card-teacher-intro .avatar-large {
-  margin-top: 10px;
+  margin-top: 43px;
   margin-bottom: 10px;
   width: 200px;
   border-radius: 50%;
   border: 3px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+
 }
 
 .card-teacher-intro .p {
