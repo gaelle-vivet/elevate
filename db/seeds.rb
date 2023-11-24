@@ -237,3 +237,81 @@ teacher_availability3 = TeacherAvailability.create!(
   sunday_am: true,
   sunday_pm: false
 )
+
+teacher_availability4 = TeacherAvailability.create!(
+  user_id: user7.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
+
+teacher_availability5 = TeacherAvailability.create!(
+  user_id: user6.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
+
+teacher_availability6 = TeacherAvailability.create!(
+  user_id: user6.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
+
+teacher_availability7 = TeacherAvailability.create!(
+  user_id: user7.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
+
+teacher_availability8 = TeacherAvailability.create!(
+  user_id: user6.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
+
+teacher_availability9 = TeacherAvailability.create!(
+  user_id: user6.id,
+  monday_am: true,
+  tuesday_am: true,
+  wednesday_am: true,
+  thursday_am: true,
+  friday_am: false,
+  saturday_am: false,
+  saturday_pm: true,
+  sunday_am: true,
+  sunday_pm: false
+)
