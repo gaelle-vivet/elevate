@@ -19,7 +19,6 @@
 .card-teacher-availability {
   margin-left: 25px;
   margin-right: 25px;
-  margin-top: 20px;
   padding: 5px;
 }
 
@@ -111,10 +110,11 @@
   margin-top: 43px;
   margin-bottom: 10px;
   width: 200px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 50%;
   border: 3px solid white;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
-
 }
 
 .card-teacher-intro .p {
@@ -202,4 +202,8 @@
 
 .card-lesson-link {
   width: 100%;
+}
+
+.card-lesson i {
+  color: $purple;
 }
