@@ -1,4 +1,6 @@
-<h1 class="text-center"><%= params[:subject].present? ? params[:subject].capitalize : "All" %> lessons</h1>
+<h1 class="heading"><%= params[:subject].present? ? params[:subject].capitalize : "All" %> lessons</h1>
+  <div class="booking-container">
+
   <% @lessons.each do |lesson| %>
     <%=link_to lesson_path(lesson), style: "text-decoration: none;" do%>
       <div class="card-lesson" >
@@ -12,3 +14,4 @@
       </div>
     <% end %>
   <% end %>
+</div>

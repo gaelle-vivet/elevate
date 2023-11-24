@@ -1,14 +1,14 @@
-<div class="booking-container">
-  <h1>All My Bookings</h1>
+  <h1 class="heading">Upcoming Bookings</h1>
 
+<div class="booking-container">
 <% @bookings.each do |booking| %>
   <div class="card-lesson">
     <div class="image-container">
-      <%= image_tag "teacher photo 2", alt: "Teacher photo"%>
+      <%= image_tag booking.lesson.user.avatar_url, alt: "Teacher photo"%>
       <p class="overlay-text"><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></p>
     </div>
       <p class="info-text"><strong>Booked:</strong> <%=booking.start_time.strftime("%A, %B %e, %Y") %>
-      <br> 
+      <br>
         <strong>Address:</strong> <%= booking.lesson.user.address%>
       <br>
         <strong>Duration:</strong> <%= booking.duration_minutes %>

@@ -23,7 +23,7 @@
     <% end %>
 
     <% unless params[:controller] == "pages" && params[:action] == "home" %>
-      <div class="container">
+      <%# <div class="container"> %>
     <% end %>
 
     <div style="margin-bottom: 70px"> <%# margin is the same as navbar height  %>
@@ -31,7 +31,7 @@
     </div>
 
     <% unless params[:controller] == "pages" && params[:action] == "home" %>
-      </div>
+      <%# </div> %>
     <% end %>
   </body>
 </html>
