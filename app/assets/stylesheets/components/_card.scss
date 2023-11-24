@@ -25,7 +25,7 @@
   margin-bottom: 0px;
 }
 
-.card-lesson {
+.card-booking {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
@@ -37,14 +37,14 @@
   border-radius: 24px;
 }
 
-.card-lesson .image-container > img {
+.card-booking .image-container > img {
   height: 250px;
   width: 100%;
   object-fit: cover;
   border-radius: 10%;
 }
 
-.card-lesson p {
+.card-booking p {
   font-size: medium;
   opacity: .7;
   margin: 15px;
@@ -52,7 +52,7 @@
   margin-bottom: 0px;
   margin-top: 10px;
 }
-.card-lesson .info-text {
+.card-booking .info-text {
   font-size: small;
   opacity: .7;
   margin: 15px;
@@ -61,7 +61,7 @@
   margin-top: 10px;
 }
 
-.card-lesson .card-lesson-infos {
+.card-booking .card-booking-infos {
   padding-left: 16px;
   justify-content: space-between;
   align-items: center;
@@ -103,6 +103,61 @@
 
 //   object-fit: cover;
 // }
+
+.card-booking .image-container p .overlay-text {
+  position: absolute;
+  bottom: 10px; /* Adjust vertically as needed */
+  margin-block-start: 10px; /* Adjust horizontally as needed */
+  transform: translate(-50%, -50%);
+  color: white; /* Adjust text color */
+  font-size: 18px; /* Adjust font size */
+  text-align: left;
+  /* Additional styling as needed */
+}
+
+.card-lesson {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border-radius: 24px;
+  max-width: 250px;
+}
+
+.card-lesson .image-container > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.card-lesson p {
+  font-size: medium;
+  opacity: .7;
+  margin: 15px;
+  color: $orange;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+.card-lesson .info-text {
+  font-size: small;
+  opacity: .7;
+  margin: 15px;
+  color: $dark-gray;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.card-lesson .card-lesson-infos {
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
 
 .card-lesson .image-container p .overlay-text {
   position: absolute;

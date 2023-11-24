@@ -2,13 +2,13 @@
 
 <div class="booking-container">
 <% @bookings.each do |booking| %>
-  <div class="card-lesson">
+  <div class="card-booking">
     <div class="image-container">
       <%= image_tag booking.lesson.user.avatar_url, alt: "Teacher photo"%>
       <span class="box-rounded"><%=booking.status%></span>
       <p class="overlay-text"><strong><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></strong></p>
     </div>
-      <div class="card-lesson-infos">
+      <div class="card-booking-infos">
         <span><%=booking.lesson.subject %></span> -
         <span><%=booking.lesson.description %></span>
     </div>
