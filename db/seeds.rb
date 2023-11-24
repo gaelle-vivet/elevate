@@ -48,7 +48,7 @@ user4 = User.create!(
   email: 'imanol@gmail.com',
   education_level: 'PhD',
   avatar_url: 'https://media.licdn.com/dms/image/C4D03AQFn81J2xzqYzA/profile-displayphoto-shrink_800_800/0/1593158466607?e=1706140800&v=beta&t=7y25dtlgh4Q4Dqwq1aEtOFM6HXA6R_UsY1qiAbqMepU',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Maths teacher providing comprehensive lessons on a range of subjects',
   address: '149 C/ del Bruc, 08037 Barcelona',
   password: 'mysafepassword'
@@ -60,7 +60,7 @@ user5 = User.create!(
   email: 'oliver.smith@gmail.com',
   education_level: 'Masters',
   avatar_url: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMGZhY2V8ZW58MHx8MHx8fDA%3',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Enthusiastic learner with a passion for science, maths and technology.',
   address: '25 Maple Avenue, SW1A 1AA London',
   password: 'oliver123'
