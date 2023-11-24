@@ -12,7 +12,7 @@ user1 = User.create!(
   email: 'aghafor@gmail.com',
   education_level: 'Undergraduate',
   avatar_url: 'https://seedlegals.com/wp-content/uploads/2022/11/Amina-Ghafor.jpg',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Passionate about mathematics and helping students succeed.',
   address: '12 Great Malborough Street, N1 4AY London',
   password: '123456'
@@ -89,6 +89,17 @@ user7 = User.create!(
   address: '25 Rue de la République, 75001 Paris',
   password: 'claire456'
 )
+
+user.8 = User.create!(
+  first_name: 'Luis',
+  last_name: 'Garcia',
+  email: 'luis@gmail.com',
+  education_level: 'Secondary',
+  avatar_url: 'https://media.licdn.com/dms/image/C4D03AQFn81J2xzqYzA/profile-displayphoto-shrink_800_800/0/1593158466607?e=1706140800&v=beta&t=7y25dtlgh4Q4Dqwq1aEtOFM6HXA6R_UsY1qiAbqMepU',
+  is_teacher: false,
+  bio: 'Final year student',
+  address: '149 C/ del Bruc, 08037 Barcelona',
+  password: '123456'
 
 # Seed data for lessons
 
