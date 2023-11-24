@@ -90,7 +90,7 @@ user7 = User.create!(
   password: 'claire456'
 )
 
-user.8 = User.create!(
+user8 = User.create!(
   first_name: 'Luis',
   last_name: 'Garcia',
   email: 'luis@gmail.com',
@@ -100,7 +100,7 @@ user.8 = User.create!(
   bio: 'Final year student',
   address: '149 C/ del Bruc, 08037 Barcelona',
   password: '123456'
-
+)
 # Seed data for lessons
 
 # maths lessons
@@ -250,7 +250,7 @@ teacher_availability3 = TeacherAvailability.create!(
 )
 
 teacher_availability4 = TeacherAvailability.create!(
-  user_id: user7.id,
+  user_id: user4.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
@@ -263,7 +263,7 @@ teacher_availability4 = TeacherAvailability.create!(
 )
 
 teacher_availability5 = TeacherAvailability.create!(
-  user_id: user6.id,
+  user_id: user5.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
@@ -290,32 +290,6 @@ teacher_availability6 = TeacherAvailability.create!(
 
 teacher_availability7 = TeacherAvailability.create!(
   user_id: user7.id,
-  monday_am: true,
-  tuesday_am: true,
-  wednesday_am: true,
-  thursday_am: true,
-  friday_am: false,
-  saturday_am: false,
-  saturday_pm: true,
-  sunday_am: true,
-  sunday_pm: false
-)
-
-teacher_availability8 = TeacherAvailability.create!(
-  user_id: user6.id,
-  monday_am: true,
-  tuesday_am: true,
-  wednesday_am: true,
-  thursday_am: true,
-  friday_am: false,
-  saturday_am: false,
-  saturday_pm: true,
-  sunday_am: true,
-  sunday_pm: false
-)
-
-teacher_availability9 = TeacherAvailability.create!(
-  user_id: user6.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
