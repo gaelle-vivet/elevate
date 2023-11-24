@@ -29,6 +29,12 @@ class BookingsController < ApplicationController
     end
   end
 
+  def destroy
+    @booking = Booing.find(params[:id])
+    @booking.destroy
+    redirect_to booking_index_path, status: :see_other
+  end
+
   private
 
   def set_lesson
