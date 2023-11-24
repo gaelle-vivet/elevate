@@ -9,7 +9,7 @@
       <p class="overlay-text"><strong><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></strong></p>
     </div>
       <div class="card-booking-infos">
-        <span><%=booking.lesson.subject %></span> -
+        <span class="card-booking-span"><%=booking.lesson.subject %></span> -
         <span><%=booking.lesson.description %></span>
     </div>
       <p class="info-text"><strong>Booked:</strong> <%=booking.start_time.strftime("%A, %B %e, %Y") %>
