@@ -107,13 +107,6 @@ lesson2 = Lesson.create!(
   hourly_rate: 25
 )
 
-lesson3 = Lesson.create!(
-  user_id: user4.id,
-  subject: 'Maths',
-  description: 'Advanced Calculus',
-  hourly_rate: 35
-)
-
 lesson4 = Lesson.create!(
   user_id: user5.id,
   subject: 'Maths',
