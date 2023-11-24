@@ -3,11 +3,28 @@
 // }
 .booking-container {
   display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
 }
+
+.booking-container i {
+  color: $dark-gray;
+}
+
+.booking-container a {
+  text-align: right;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.booking-container .box-rounded {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
 .card-lesson {
   overflow: hidden;
   background: white;
@@ -18,7 +35,6 @@
   margin-right: 15px;
   margin-bottom: 15px;
   border-radius: 24px;
-  max-width: 250px;
 }
 
 .card-lesson .image-container > img {
@@ -32,7 +48,7 @@
   font-size: medium;
   opacity: .7;
   margin: 15px;
-  color: $orange;
+  color: $dark-gray;
   margin-bottom: 0px;
   margin-top: 10px;
 }
@@ -46,10 +62,11 @@
 }
 
 .card-lesson .card-lesson-infos {
-  padding: 16px;
+  padding-left: 16px;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  color: $dark-gray;
 }
 
 .card-teacher-intro {

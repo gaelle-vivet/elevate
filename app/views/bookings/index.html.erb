@@ -5,7 +5,12 @@
   <div class="card-lesson">
     <div class="image-container">
       <%= image_tag booking.lesson.user.avatar_url, alt: "Teacher photo"%>
-      <p class="overlay-text"><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></p>
+      <span class="box-rounded"><%=booking.status%></span>
+      <p class="overlay-text"><strong><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></strong></p>
+    </div>
+      <div class="card-lesson-infos">
+        <span><%=booking.lesson.subject %></span> -
+        <span><%=booking.lesson.description %></span>
     </div>
       <p class="info-text"><strong>Booked:</strong> <%=booking.start_time.strftime("%A, %B %e, %Y") %>
       <br>
@@ -14,10 +19,10 @@
         <strong>Duration:</strong> <%= booking.duration_minutes %>
       <br>
         <strong>Price: </strong><%="#{booking.lesson.hourly_rate} €"%> </p>
-    <div class="card-lesson-infos">
-      <span><%=booking.lesson.subject %></span>
-      <span><%=booking.lesson.description %></span>
-    </div>
+
+    <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+    <i class="fa-regular fa-trash-can"></i>
+    <% end %>
   </div>
   <% end %>
 </div>
