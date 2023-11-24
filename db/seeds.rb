@@ -12,7 +12,7 @@ user1 = User.create!(
   email: 'aghafor@gmail.com',
   education_level: 'Undergraduate',
   avatar_url: 'https://seedlegals.com/wp-content/uploads/2022/11/Amina-Ghafor.jpg',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Passionate about mathematics and helping students succeed.',
   address: '12 Great Malborough Street, N1 4AY London',
   password: '123456'
@@ -48,7 +48,7 @@ user4 = User.create!(
   email: 'imanol@gmail.com',
   education_level: 'PhD',
   avatar_url: 'https://media.licdn.com/dms/image/C4D03AQFn81J2xzqYzA/profile-displayphoto-shrink_800_800/0/1593158466607?e=1706140800&v=beta&t=7y25dtlgh4Q4Dqwq1aEtOFM6HXA6R_UsY1qiAbqMepU',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Maths teacher providing comprehensive lessons on a range of subjects',
   address: '149 C/ del Bruc, 08037 Barcelona',
   password: 'mysafepassword'
@@ -60,7 +60,7 @@ user5 = User.create!(
   email: 'oliver.smith@gmail.com',
   education_level: 'Masters',
   avatar_url: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbiUyMGZhY2V8ZW58MHx8MHx8fDA%3',
-  is_teacher: false,
+  is_teacher: true,
   bio: 'Enthusiastic learner with a passion for science, maths and technology.',
   address: '25 Maple Avenue, SW1A 1AA London',
   password: 'oliver123'
@@ -90,6 +90,17 @@ user7 = User.create!(
   password: 'claire456'
 )
 
+user8 = User.create!(
+  first_name: 'Luis',
+  last_name: 'Garcia',
+  email: 'luis@gmail.com',
+  education_level: 'Secondary',
+  avatar_url: 'https://media.licdn.com/dms/image/C4D03AQFn81J2xzqYzA/profile-displayphoto-shrink_800_800/0/1593158466607?e=1706140800&v=beta&t=7y25dtlgh4Q4Dqwq1aEtOFM6HXA6R_UsY1qiAbqMepU',
+  is_teacher: false,
+  bio: 'Final year student',
+  address: '149 C/ del Bruc, 08037 Barcelona',
+  password: '123456'
+)
 # Seed data for lessons
 
 # maths lessons
@@ -239,7 +250,7 @@ teacher_availability3 = TeacherAvailability.create!(
 )
 
 teacher_availability4 = TeacherAvailability.create!(
-  user_id: user7.id,
+  user_id: user4.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
@@ -252,7 +263,7 @@ teacher_availability4 = TeacherAvailability.create!(
 )
 
 teacher_availability5 = TeacherAvailability.create!(
-  user_id: user6.id,
+  user_id: user5.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
@@ -279,32 +290,6 @@ teacher_availability6 = TeacherAvailability.create!(
 
 teacher_availability7 = TeacherAvailability.create!(
   user_id: user7.id,
-  monday_am: true,
-  tuesday_am: true,
-  wednesday_am: true,
-  thursday_am: true,
-  friday_am: false,
-  saturday_am: false,
-  saturday_pm: true,
-  sunday_am: true,
-  sunday_pm: false
-)
-
-teacher_availability8 = TeacherAvailability.create!(
-  user_id: user6.id,
-  monday_am: true,
-  tuesday_am: true,
-  wednesday_am: true,
-  thursday_am: true,
-  friday_am: false,
-  saturday_am: false,
-  saturday_pm: true,
-  sunday_am: true,
-  sunday_pm: false
-)
-
-teacher_availability9 = TeacherAvailability.create!(
-  user_id: user6.id,
   monday_am: true,
   tuesday_am: true,
   wednesday_am: true,
