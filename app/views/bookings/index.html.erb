@@ -1,15 +1,23 @@
-<h1>All my Bookings</h1>
+<div class="booking-container">
+  <h1>All My Bookings</h1>
+
 <% @bookings.each do |booking| %>
-  <div class="card-lesson" >
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <p><%=booking.lesson.user.first_name%> <%=booking.lesson.user.last_name%></p>
+  <div class="card-lesson">
+    <div class="image-container">
+      <%= image_tag "teacher photo 2", alt: "Teacher photo"%>
+      <p class="overlay-text"><%= booking.lesson.user.first_name%> <%=booking.lesson.user.last_name %></p>
+    </div>
+      <p class="info-text"><strong>Booked:</strong> <%=booking.start_time.strftime("%A, %B %e, %Y") %>
+      <br> 
+        <strong>Address:</strong> <%= booking.lesson.user.address%>
+      <br>
+        <strong>Duration:</strong> <%= booking.duration_minutes %>
+      <br>
+        <strong>Price: </strong><%="#{booking.lesson.hourly_rate} €"%> </p>
     <div class="card-lesson-infos">
       <span><%=booking.lesson.subject %></span>
       <span><%=booking.lesson.description %></span>
-      <h2 class="card-lesson-pricing"><%="#{booking.lesson.hourly_rate} €"%></h2>
-      <h3> <%= booking.start_time %></h3>
-      <h3> <%= booking.end_time %></h3>
-      
     </div>
   </div>
-<% end %>
+  <% end %>
+</div>
