@@ -1,10 +1,23 @@
 .box-rounded {
-  color: $white;
+  color: $primary;
   text-decoration: bold;
-  font-size: small;
+  font-size: 12px;
   background-color: $light-purple;
   padding: 8px 20px;
   border-radius: 50px;
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.box-rounded-2 {
+  color: $primary;
+  text-decoration: bold;
+  font-size: 12px;
+  background-color: $light-purple;
+  padding: 8px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-block: 4px;
+  margin-inline: 0px;
 }

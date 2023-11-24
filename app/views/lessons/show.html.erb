@@ -2,43 +2,49 @@
   <div class="card-teacher-intro">
     <div class="simple-box"></div>
     <%= image_tag @lesson.user.avatar_url, class: "avatar-large", alt: "Teacher photo"%>
-    <h1 class ="heading" ><%=@lesson.user.first_name%></h2>
-    <p><%=@lesson.subject%></p>
+    <h2 class="subheading"><%= "#{@lesson.user.first_name} #{@lesson.user.last_name}" %></h2>
   </div>
 
-  <div class="card-teacher-about m-3">
+  <div class="card-teacher-about m-4">
+    <div class="teacher-tags">
+      <span class="box-rounded">
+        <i class="fa-solid fa-pencil" style="color: $primary;"></i> <%= @lesson.subject %>
+      </span>
+      <span class="box-rounded">
+        <i class="fa-solid fa-graduation-cap icon" style="color: $primary;"></i>   <%=@lesson.user.education_level%>
+      </span>
+      <span class="box-rounded">
+        <i class="fa-solid fa-coins" style="color: $primary;"></i>   <%="#{@lesson.hourly_rate}€/hour"%>
+      </span>
+    </div>
+  </div>
+
+  <div class="card-lesson-about">
     <h3><%="About #{@lesson.user.first_name}"%></h3>
-        <span class="box-rounded">
-          <i class="fa-solid fa-graduation-cap icon" style="color: #ffffff;"></i>   <%=@lesson.user.education_level%>
-        </span>
-        <span class="box-rounded">
-          <i class="fa-solid fa-coins" style="color: #ffffff;"></i>   <%="#{@lesson.hourly_rate}€/hour"%>
-        </span>
     <p><%=@lesson.user.bio%></p>
-  </div>
-
-  <div class="card-lesson-about m-3">
     <h3>Lesson Details</h3>
     <p><%=@lesson.description %></p>
   </div>
 
-  <div class="card-teacher-availability m-3">
-    <h3><%="#{@lesson.user.first_name}'s availability"%></h3>
-      <%@teacher_availabilities.attributes.select { |key, value| value == true}.keys.each do |key|%>
+  <div class="card-teacher-availability m-4">
+    <h3><%="#{@lesson.user.first_name}'s Availability"%></h3>
+    <%@teacher_availabilities.attributes.select { |key, value| value == true}.keys.each do |key|%>
       <% day_array = key.split("_") %>
-      <span class="box-rounded"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "morning" : "afternoon"}" %></span>
-      <%end%>
+      <span class="box-rounded-2"><%= "#{day_array[0].capitalize} #{day_array[1] == "am" ? "morning" : "afternoon"}" %></span>
+    <%end%>
   </div>
 
-  <div data-controller="toggle" class="mt-5">
-    <h3><%="Book Now With #{@lesson.user.first_name}"%></h3>
+  <div class="book-now m-4">
+    <h3><%= "Book Now With #{@lesson.user.first_name}" %></h3>
     <%= simple_form_for [@lesson, @booking] do |f|%>
-    <div class ="booking-form">
-      <%= f.input :occurs_on,
-                  label: false,
-                  as: :string,
-                  input_html: { data: { controller: "datepicker" }, placeholder: "Select date and time"} %>
-                  <i class="fa-solid fa-calendar-days"></i></div>
-      <%= f.submit 'Book', class: "btn btn-primary btn-block" %>
-    <%end%>
+      <div class="booking-form">
+        <%= f.input :occurs_on,
+                    label: false,
+                    as: :string,
+                    input_html: { data: { controller: "datepicker" }, placeholder: "Select date and time" } %>
+        <i class="fa-solid fa-calendar-days"></i>
+        <%= f.submit 'Book', class: "btn btn-primary btn-block" %>
+      </div>
+    <% end %>
+  </div>
 </div>
