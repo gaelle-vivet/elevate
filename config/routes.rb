@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'bookings/show'
   devise_for :users
   root to: "pages#home"
-  resources :bookings, only: [:show, :index]
+  resources :bookings, only: [:show, :index, :destroy]
   resources :lessons, only: %i[index show] do
-    resources :bookings, only: %i[index create]
+    resources :bookings, only: %i[create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

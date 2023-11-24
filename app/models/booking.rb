@@ -2,7 +2,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :lesson
-  has_one :review
+  has_one :review, dependent: :destroy
 
   DURATION_OPTIONS = [60, 90, 180].freeze
   STATUS_OPTIONS = %w(Pending Confirmed Completed).freeze

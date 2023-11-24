@@ -2,7 +2,7 @@
   <div class="booking-container">
 
   <% @lessons.each do |lesson| %>
-    <%=link_to lesson_path(lesson), style: "text-decoration: none;" do%>
+    <%=link_to lesson_path(lesson), style: "text-decoration: none;", class: "card-lesson-link" do%>
       <div class="card-lesson" >
         <%= image_tag lesson.user.avatar_url, alt: "Teacher photo"%>
         <p><%=lesson.user.first_name%></p>
